@@ -340,7 +340,7 @@
 
         const formData = new FormData(rsvpForm);
 
-        await fetch("/", {
+        await fetch("/?form-name=rsvp", {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
