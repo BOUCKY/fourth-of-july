@@ -52,6 +52,17 @@ select{
     align-items: center;
     padding: 50px 0;
 }
+.main-header{
+    font-size: 64px;
+}
+.tiny-header{
+    font-size: 24px;
+    font-style: italic;
+}
+.sub-header{
+    display: flex;
+    font-size: 50px;
+}
 .left-firework{
     transform: rotate(325deg);
     position: relative;
@@ -153,7 +164,11 @@ select{
     width: 50%;
 }
 .radio-group label{
-    white-space: nowrap;
+    width: 165px;
+    text-align: end;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 .checkbox-group{
     display: flex;
@@ -218,4 +233,276 @@ select{
     position: relative;
     top: -20px;
     left: 258px;
+}
+
+
+@media (max-width: 975px){
+    .top-image{
+        height: 500px;
+        background-attachment: scroll;
+        background-position: center;
+    }
+
+    .left-firework, .right-firework{
+        height: 75px;
+    }
+    .main-header{
+        font-size: 48px;
+    }
+    .tiny-header{
+        font-size: 18px;
+        font-style: italic;
+    }
+    .sub-header{
+        display: flex;
+        font-size: 32px;
+    }
+
+    .countdown-stack{
+        font-size: 16px;
+    }
+    .numbers{
+        font-size: 24px;
+    }
+
+    .info-section{
+        width: 450px;
+        font-size: 16px;
+    }
+    .summary{
+        width: 475px;
+        font-size: 16px;
+    }
+
+    #rsvp-form{
+        width: 475px;
+        font-size: 16px;
+    }
+    .form-heading{
+        font-size: 24px;
+    }
+    #sub-select{
+        width: calc(50% + 26px);
+    }
+
+    input[type="radio"]{
+        margin-left: 10px;
+    }
+
+    .submit-btn{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 700px){
+    .top-image{
+        height: 300px;
+        background-attachment: scroll;
+        background-position: center;
+    }
+
+    .main-header{
+        font-size: 36px;
+    }
+    .sub-header{
+        font-size: 24px;
+    }
+    .left-firework, .right-firework{
+        height: 50px;
+        top: -15px;
+    }
+    #countdown-section{
+        grid-template-columns: repeat(4, 75px);
+    }
+    .number-row p{
+        left: 25px;
+    }
+
+    .info-section{
+        width: 350px;
+    }
+    .summary{
+        width: 375px;
+    }
+
+    #rsvp-form{
+        width: 375px;
+    }
+    .form-heading{
+        font-size: 18px;
+    }
+
+    .submit-popup-box{
+        width: 350px;
+    }
+    #popup-title{
+        font-size: 24px;
+    }
+    #popup-message{
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    #close-popup{
+        left: 185px;
+    }
+}
+
+@media (max-width: 560px){
+    .top-image{
+        height: 200px;
+    }
+
+    .main-header{
+        font-size: 24px;
+        margin-top: -25px;
+    }
+    .tiny-header{
+        font-size: 16px;
+    }
+    .sub-header{
+        font-size: 20px;
+    }
+    .left-firework, .right-firework{
+        height: 25px;
+        top: 0px;
+        left: 0;
+    }
+    #countdown-section{
+        grid-template-columns: repeat(4, 50px);
+    }
+    .numbers{
+        font-size: 18px;
+    }
+    .number-row p{
+        left: 18px;
+    }
+
+    .info-section{
+        width: 300px;
+        font-size: 14px;
+    }
+    .summary{
+        width: 325px;
+        font-size: 14px;
+    }
+
+    #rsvp-form{
+        width: 300px;
+        border: 2px solid #6A564A;
+    }
+    .form-heading{
+        font-size: 16px;
+    }
+    .form-stack{
+        flex-direction: column;
+    }
+    .form-stack-label{
+        font-size: 14px;
+    }
+    .radio-group{
+        align-items: normal;
+    }
+    .submit-btn{
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    input[type="text"], input[type="email"], input[type="number"] textarea, select, #sub-select{
+        border: 1px solid #b7b6b5;
+        font-size: 12px;
+    }
+    input[type="text"], input[type="email"], textarea{
+        width: calc(100% - 15px);
+    }
+    select, #sub-select{
+        width: 100%;
+    }
+
+    .submit-popup-box{
+        width: 250px;
+    }
+    #popup-title{
+        font-size: 16px;
+    }
+    #popup-message{
+        font-size: 14px;
+    }
+    #close-popup{
+        left: 135px;
+    }
+}
+
+@media (max-width: 375px){
+    .top-image{
+        height: 100px;
+    }
+
+    .main-header{
+        font-size: 18px;
+        margin-top: -35px;
+    }
+    .tiny-header{
+        font-size: 14px;
+    }
+    .sub-header{
+        font-size: 16px;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    .left-firework, .right-firework{
+        height: 25px;
+        top: 0px;
+        left: 0;
+    }
+    #countdown-section{
+        grid-template-columns: repeat(4, 50px);
+        gap: 10px;
+    }
+    .numbers{
+        font-size: 16px;
+    }
+    .number-row p{
+        left: 18px;
+    }
+    .measurement{
+        font-size: 14px;
+    }
+
+    .info-section, .summary{
+        width: 90%;
+    }
+    .info-stack{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #rsvp-form{
+        width: 200px;
+    }
+    .form-heading{
+        font-size: 14px;
+    }
+    .form-stack label{
+        font-size: 12px;
+    }
+    .submit-btn{
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .submit-popup-box{
+        width: 150px;
+        padding: 25px 5px;
+    }
+    #popup-title{
+        font-size: 14px;
+    }
+    #popup-message{
+        font-size: 12px;
+    }
+    #close-popup{
+        left: 65px;
+    }
 }

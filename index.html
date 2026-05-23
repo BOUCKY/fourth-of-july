@@ -20,11 +20,11 @@
         <div class="content">
             <div class="top-image"></div>
             <div class="welcome-banner">
-                <div style="font-size: 64px;">You're Invited</div>
-                <div style="font-size: 24px; font-style: italic;">to the first</div>
-                <div style="display: flex; font-size: 50px;">
+                <div class="main-header">You're Invited</div>
+                <div class="tiny-header">to the first</div>
+                <div class="sub-header">
                     <img src="./images/fireworks.png" class="left-firework">
-                    <p style="margin: 0; width: 700px;">Weiner Family 4th of July Party</p>
+                    <p style="margin: 0;">Weiner Family 4th of July Party</p>
                     <img src="./images/fireworks.png" class="right-firework">
                 </div>
                 <div id="countdown-section">
@@ -92,14 +92,14 @@
                     <div class="form-stack">
                         <label class="form-stack-label">Is this a new RSVP or an update?</label>
 
-                        <select name="submission_type" required>
+                        <select id="sub-select" name="submission_type" required style="height: 29px !important;">
                             <option value="New RSVP">New RSVP</option>
                             <option value="Update RSVP">Update RSVP</option>
                         </select>
                     </div>
                     <div class="form-stack">
                         <label class="form-stack-label">Are you coming?</label>
-                        <select id="rsvp-status" name="rsvp_status" required>
+                        <select id="rsvp-status" name="rsvp_status" required style="height: 29px !important;">
                             <option value="">Select one</option>
                             <option value="Yes">Yes!</option>
                             <option value="No">Not This Time.</option>
@@ -115,11 +115,11 @@
                         <label class="form-stack-label">Food Vote:</label>
                         <div class="radio-group">
                             <label>
-                                <input type="radio" name="food_vote" value="Pizza" style="width: 20px; margin-right: 91px; cursor: pointer;">
+                                <input type="radio" name="food_vote" value="Pizza" style="cursor: pointer;">
                                 Pizza
                             </label>
                             <label>
-                                <input type="radio" name="food_vote" value="Burgers & Dogs" style="width: 20px; cursor: pointer;">
+                                <input type="radio" name="food_vote" value="Burgers & Dogs" style="cursor: pointer;">
                                 Burgers & Dogs
                             </label>
                         </div>
@@ -195,7 +195,7 @@
                 </form>
             </div>
         </div>
-        <div id="submit-popup" class="submit-popup" style="display: none;">
+        <div id="submit-popup" class="submit-popup" style="display: flex;">
             <div class="submit-popup-box">
                 <button type="button" id="close-popup" class="close-popup">x</button>
                 <div id="popup-title"></div>
@@ -316,9 +316,7 @@
     const popupMessage = document.getElementById("popup-message");
     const closeBtn = document.getElementById("close-popup");
 
-    rsvpForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const status = rsvpStatus.value;
+    const status= "Yes";
 
         if(status === "Yes"){
             popupTitle.innerText = "🎆 We're Excited to See You! 🎆";
@@ -335,6 +333,11 @@
             popupMessage.innerText =
                 "Thanks for letting us know. Hopefully we'll see you at the next one!";
         }
+
+    rsvpForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const status = rsvpStatus.value;
+        
         
         submittedAtInput.value = new Date().toISOString();
 
