@@ -80,6 +80,7 @@
                 </div>
 
                 <form id="rsvp-form" name="rsvp" method="POST" data-netlify="true">
+                    <input type="hidden" id="submission-title" name="submission_title">
                     <input type="hidden" name="form-name" value="rsvp">
                     <input type="hidden" id="submitted-at" name="submitted_at">
                     <input type="hidden" name="guest_names[]">
@@ -338,6 +339,8 @@
         }
         
         submittedAtInput.value = new Date().toISOString();
+
+        document.getElementById("submission-title").value = rsvpForm.email.value;
 
         const formData = new FormData(rsvpForm);
 
