@@ -400,7 +400,10 @@ select{
         font-size: 14px;
     }
     .radio-group{
-        align-items: normal;
+        width: 100%;
+    }
+    .checkbox-group{
+        align-items: flex-end;
     }
     .submit-btn{
         font-size: 14px;
