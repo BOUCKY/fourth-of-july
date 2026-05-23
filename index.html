@@ -195,7 +195,7 @@
                 </form>
             </div>
         </div>
-        <div id="submit-popup" class="submit-popup" style="display: flex;">
+        <div id="submit-popup" class="submit-popup" style="display: none;">
             <div class="submit-popup-box">
                 <button type="button" id="close-popup" class="close-popup">x</button>
                 <div id="popup-title"></div>
@@ -316,7 +316,9 @@
     const popupMessage = document.getElementById("popup-message");
     const closeBtn = document.getElementById("close-popup");
 
-    const status= "Yes";
+    rsvpForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const status = rsvpStatus.value;
 
         if(status === "Yes"){
             popupTitle.innerText = "🎆 We're Excited to See You! 🎆";
@@ -333,11 +335,6 @@
             popupMessage.innerText =
                 "Thanks for letting us know. Hopefully we'll see you at the next one!";
         }
-
-    rsvpForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const status = rsvpStatus.value;
-        
         
         submittedAtInput.value = new Date().toISOString();
 
