@@ -276,7 +276,7 @@
 
             group.innerHTML = `
                 <label>Guest ${i} Name</label>
-                <input type="text" name="guest_${i}_name" ${rsvpStatus.value === "Yes" || rsvpStatus.value === "Maybe" ? "required" : ""}>
+                <input type="text" name="guest_names[]" ${rsvpStatus.value === "Yes" || rsvpStatus.value === "Maybe" ? "required" : ""}>
             `;
 
             guestNamesContainer.appendChild(group);
@@ -347,6 +347,10 @@
             },
             body: new URLSearchParams(formData).toString()
         });
+
+        // for (const [key, value] of formData.entries()) {
+        //     console.log(key, value);
+        // }
 
         popupBox.style.display = "flex";
         rsvpForm.reset();
